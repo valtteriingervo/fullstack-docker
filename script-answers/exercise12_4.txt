@@ -1,0 +1,7 @@
+sudo docker start -i heuristic_cannon # Start the container in interactive mode
+apt-get -y install curl # Install curl
+curl -sL https://deb.nodesource.com/setup_16.x | bash
+apt install -y nodejs # Install node with these two commands
+node -v # Check that node is installed -> Got version 16.20.0
+node /usr/src/app/index.js # Outputs 'Hello World'
+exit # Exit from the container

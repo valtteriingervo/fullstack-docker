@@ -1,0 +1,5 @@
+sudo docker start -i heuristic_cannon
+apt-get update
+apt-get -y install nano
+nano /usr/src/app/index.js #inside nano write the console.log, save with Ctrl + S and exit nano with Ctrl + X
+exit
