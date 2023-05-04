@@ -21,6 +21,7 @@ const singleRouter = express.Router();
 
 const findByIdMiddleware = async (req, res, next) => {
   const { id } = req.params
+  req.id = id // Store the id of the todo in the request object's id field
   req.todo = await Todo.findById(id)
   if (!req.todo) return res.sendStatus(404)
 
@@ -29,18 +30,25 @@ const findByIdMiddleware = async (req, res, next) => {
 
 /* DELETE todo. */
 singleRouter.delete('/', async (req, res) => {
-  await req.todo.delete()  
+  await req.todo.delete()
   res.sendStatus(200);
 });
 
 /* GET todo. */
 singleRouter.get('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  // the middleware stores the todo by ID in the todo field of the request object
+  res.send(req.todo)
 });
 
 /* PUT todo. */
 singleRouter.put('/', async (req, res) => {
-  res.sendStatus(405); // Implement this
+  const updatedFields = {
+    text: req.body.text,
+    done: req.body.done
+  }
+  // id of the todo stored req.id by the middleware findByIdMiddleware
+  await Todo.findByIdAndUpdate(req.id, updatedFields)
+  res.sendStatus(200)
 });
 
 router.use('/:id', findByIdMiddleware, singleRouter)
