@@ -1,0 +1,9 @@
+sudo docker container ls # Find out the name of the mongo container
+sudo docker exec -it todo-backend-mongo-1 bash # Hop into the container using bash
+mongosh -u root -p example # Open the Mongo CLI with the correct username and password
+show dbs # Show the databases
+use the_database # Switch to the correct database
+show collections # Show the collections
+db.todos.find({}) # Access all the data in the todos collection
+db.todos.insertOne({text: "Increase the number of tools in my toolbelt", done: false}) # Insert the new todo object into the todos collection
+db.todos.find({}) # See that the new todo has been added correctly
