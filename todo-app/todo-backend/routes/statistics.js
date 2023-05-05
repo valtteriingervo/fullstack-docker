@@ -9,7 +9,10 @@ const todoCounterKey = 'todo_counter_key'
 
 /* GET added todos counter. */
 router.get('/', async (_, res) => {
-  const todosCounter = await getAsync(todoCounterKey)
+  let todosCounter = await getAsync(todoCounterKey)
+  if (!todosCounter) {
+    todosCounter = 0
+  }
   const todosCounterObject = {
     added_todos: todosCounter
   }
