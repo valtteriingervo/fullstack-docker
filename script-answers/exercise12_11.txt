@@ -1,0 +1,10 @@
+sudo docker container ls # Find out the name of the Redis container
+sudo docker exec -it todo-backend-redis-1 bash # Enter the container in interactive module
+redis-cli KEYS * # Find out the keys with Redis cli
+redis-cli GET todo_counter_key # Fetch the value associated with the keys
+redis-cli SET todo_counter_key 9001 # Set the value to 9001
+redis-cli GET todo_counter_key # Fetch the key again to make sure the value was updated
+redis-cli GET todo_counter_key # .. and again after adding a new todo with Postman
+redis-cli DEL todo_counter_key # Delete the counter key
+
+(and made sure the counter works after deleting the key when new todos are added)
