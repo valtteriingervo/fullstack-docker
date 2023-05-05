@@ -2,6 +2,6 @@ POST http://localhost:3000/todos
 content-type: application/json
 
 {
-    "text": "Hug my dog",
+    "text": "Flail in the wind with attitude",
     "done": false
 }

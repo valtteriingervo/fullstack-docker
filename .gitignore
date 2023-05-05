@@ -2,3 +2,4 @@ sandbox
 node_modules
 mongo_data
 redis_data
+build
