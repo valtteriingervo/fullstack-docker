@@ -1,7 +1,7 @@
-POST http://localhost:3000/todos
+POST http://localhost:3001/todos
 content-type: application/json
 
 {
-    "text": "Flail in the wind with attitude",
+    "text": "Go squat at 13.00",
     "done": false
 }
