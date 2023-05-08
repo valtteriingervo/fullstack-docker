@@ -1,5 +1,10 @@
 import axios from 'axios'
-const baseUrl = '/api/blogs'
+
+let baseUrl
+// processUrl is of form "http://server:3001"
+const processUrl = process.env.REACT_APP_BACKEND_URL
+// If processUrl is undefined, use the relative url
+processUrl ? baseUrl = `${processUrl}/api/blogs` : baseUrl = '/api/blogs'
 
 let token = null
 
