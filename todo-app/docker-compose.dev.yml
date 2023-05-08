@@ -8,15 +8,15 @@ services:
       REACT_APP_BACKEND_URL: http://localhost:8080/api # Backend accessed via nginx proxy
     volumes:
       - ./todo-frontend:/usr/src/app # The path can be relative
-    ports:
-      - 3000:3000
+    #ports:
+    #  - 3000:3000
     container_name: hello-front-dev-2 # This will name the container hello-front-dev
   server:
     image: todo-back-dev
     volumes:
       - ./todo-backend:/usr/src/app
-    ports:
-      - 3001:3001
+    #ports:
+    #  - 3001:3001
     environment:
       - REDIS_URL=redis://redis:6379 # The host is now the redis service inside the docker network
       - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database # similar change in here: localhost > mongo
