@@ -4,6 +4,8 @@ services:
     build:
       context: ./todo-frontend # The context will pick the todo-frontend directory as the "build context"
       dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+    environment:
+      REACT_APP_BACKEND_URL: http://localhost:8080/api # Backend accessed via nginx proxy
     volumes:
       - ./todo-frontend:/usr/src/app # The path can be relative
     ports:

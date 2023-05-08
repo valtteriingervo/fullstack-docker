@@ -14,7 +14,8 @@ router.get('/', async (_, res) => {
     todosCounter = 0
   }
   const todosCounterObject = {
-    added_todos: todosCounter
+    added_todos: todosCounter,
+    hot_reload_msg: 'Hello! Hot reload works in backend as well'
   }
   res.send(todosCounterObject);
 });

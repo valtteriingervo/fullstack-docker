@@ -36,7 +36,7 @@ const TodoView = () => {
 
   return (
     <>
-      <h1>Todos - Now inside a container!</h1>
+      <h1>Todos - Testing hot reloading with Nginx proxy!</h1>
       <Form createTodo={createTodo} />
       <List todos={todos} deleteTodo={deleteTodo} completeTodo={completeTodo} />
     </>
