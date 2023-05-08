@@ -4,3 +4,4 @@ mongo_data
 redis_data
 build
 requests
+variables.env
